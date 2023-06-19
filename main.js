@@ -335,7 +335,6 @@ let sumaTotal = 0
                                                 return sumaTotal * porcentaje
                                             } 
                                             let resultadoDescuento2y3 = descuento (sumaTotal, porcentaje)
-                                            alert ('debido a un descuento le queda en ' + resultadoDescuento2y3)
                                             alert ('A elegido los vinilos Final Cut y The Rise and Fall of Ziggy Stardust and the Spiders from Mars, debido a un descuento le queda en ' + resultadoDescuento2y3)
                                             entrada = prompt ('Para continuar comprando escriba otro numero o presione ESC para salir')                        
                                             
