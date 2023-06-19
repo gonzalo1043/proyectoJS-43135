@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+}
+
+header {
+  background-color: #5800FF;
+  border-radius: 20px;
+}
+header h1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-transform: uppercase;
+  color: black;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 100px;
+}
+
+main section .card {
+  background-color: #000000;
+}
+main section .card img {
+  width: 300px;
+  height: 300px;
+}
+main section .card h5 {
+  color: #E900FF;
+  font-size: 30px;
+}
+main section .card p {
+  color: #FFC600;
+}
+
+/*# sourceMappingURL=style.css.map */
