@@ -61,28 +61,28 @@ main .ElegirVinilosNuevos div label {
 main .ElegirVinilosNuevos div input {
   display: grid;
 }
-main section .card {
+main .card {
   background-color: #000000;
 }
-main section .card img {
+main .card img {
   width: 300px;
   height: 300px;
   border-radius: 30px;
 }
-main section .card h5 {
+main .card h5 {
   color: #5800FF;
   font-size: 30px;
 }
-main section .card p {
+main .card p {
   color: #FFC600;
 }
-main section .card .precio {
+main .card .precio {
   font-size: 30px;
 }
 
 .btnFinal {
   display: grid;
-  grid-template: auto auto/100px auto 100px;
+  grid-template: auto auto auto/100px auto 100px;
 }
 .btnFinal .botonFinalizarCompra {
   display: grid;
@@ -97,6 +97,12 @@ main section .card .precio {
   grid-column: 2/3;
   grid-row: 2/3;
   justify-self: center;
+}
+.btnFinal .spinner-border {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  justify-self: center;
+  margin-top: 10px;
 }
 
 .btn-primary {
@@ -122,6 +128,11 @@ main section .card .precio {
 
 .botonAgregar {
   padding: 0;
+}
+
+.toastify {
+  background: #FFC600;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,15 +7,23 @@
     , initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+            />
     <link rel="stylesheet" href="./css/style.css">
-
 </head>
 
 <body>
     <header>
         <h1>Tienda de vinilos</h1>
     </header>
+    
     <main>
+        <section class="VinilosConDescuento">
+            <button id="descuento" class="btn btn-primary">VINILOS CON DESCUENTO</button>
+        </section>
 
         <section class="sectionVinilos">
             <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -38,7 +46,7 @@
                             <h5 class="card-title">Final Cut - Pink floyd</h5>
                             <p class="precio">USD$ 35</p>
                             <p class="card-text">10% de descuento con esta compra</p>
-                            <button id="2" class="btn btn-primary">COMPRAR</button>
+                            <button id="2" class="btn btn-primary botonComprar">COMPRAR</button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +58,7 @@
                             <h5 class="card-title">The rise and fall of Ziggy Stardust and the Spiders from Mars - David Bowie</h5>
                             <p class="precio">USD$ 42</p>
                             <p class="card-text">10% de descuento con esta compra</p>
-                            <button id="3" class="btn btn-primary">COMPRAR</button>
+                            <button id="3" class="btn btn-primary botonComprar">COMPRAR</button>
                         </div>
                     </div>
                 </div>
@@ -62,7 +70,7 @@
                             <h5 class="card-title">Parte de la Religión - Charly Garcia</h5>
                             <p class="precio">USD$ 32</p>
                             <p class="card-text">10% de descuento con esta compra</p>
-                            <button id="4" class="btn btn-primary">COMPRAR</button>
+                            <button id="4" class="btn btn-primary botonComprar">COMPRAR</button>
                         </div>
                     </div>
                 </div>
@@ -73,7 +81,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Nightclubbing - Grace Jones</h5>
                             <p class="precio">USD$ 50</p>
-                            <button id="5" class="btn btn-primary">COMPRAR</button>
+                            <button id="5" class="btn btn-primary botonComprar">COMPRAR</button>
                         </div>
                     </div>
                 </div>
@@ -84,7 +92,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Superficie de Placer - Virus</h5>
                             <p class="precio">USD$ 35</p>
-                            <button id="6" class="btn btn-primary">COMPRAR</button>
+                            <button id="6" class="btn btn-primary botonComprar">COMPRAR</button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +103,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Donde estan los ladrones - Shakira</h5>
                             <p class="precio">USD$ 30</p>
-                            <button id="7" class="btn btn-primary">COMPRAR</button>
+                            <button id="7" class="btn btn-primary botonComprar">COMPRAR</button>
                         </div>
                     </div>
                 </div>
@@ -106,19 +114,38 @@
                         <div class="card-body">
                             <h5 class="card-title">Discutible - Babasonicos</h5>
                             <p class="precio">USD$ 32</p>
-                            <button id="8" class="btn btn-primary">COMPRAR</button>
+                            <button id="8" class="btn btn-primary botonComprar">COMPRAR</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="btnFinal">
-                <button id="finalizarCompra" class="btn btn-primary botonFinalizarCompra" >FINALIZAR COMPRA</button>
-                <button id="mostrarCarrito" class="btn btn-primary mostrarCarrito">MOSTRAR CARRITO </button>
+                <button id="guardarCompra" class="btn btn-primary botonFinalizarCompra" >GUARDAR COMPRA</button>
+                <button id="mostrarCarrito" class="btn btn-primary mostrarCarrito">CARRITO</button>
+                
+                <div class="spinner-border text-warning" role="status" id="spinner" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
-            
         </section>
-        
+
+
+        <!-- PROXIMOS VINILOS -->
+        <section>
+            <div>
+                <button id="proximosVinilos" class="btn btn-primary">PROXIMOS VINILOS</button>
+                <div class="spinner-border text-warning" role="status" id="spinner2" style="display: none;">
+                    <span class="visually-hidden">Loading...</span>
+                    </div>
+                <div id="divProximosVinilos" class="row row-cols-1 row-cols-md-4 g-4"></div>
+                <div class="botonConfirmarReserva"></div>     
+                <div class="verVinilosReservados"></div>           
+            </div>
+        </section>
+
+
+        <!-- ENCARGAR VINILOS -->
         <section class="ElegirVinilosNuevos">
             <div>
                 <h2>ENCARGAR VINILOS</h2>
@@ -133,18 +160,26 @@
                     <button id ='submit' class="btn botonEncargar botonAgregar ">AGREGAR</button>
                     <button id= "confirmar" class="btn botonEncargar botonConfirmar">CONFIRMAR</button>
                     <button id="encargo" class="btn botonEncargar botonEncargados">ENCARGADOS</button>
-                
-            
             </div>
-            
+            <div class="vinilosEncargados"></div>
         </section>
 
     </main>
 
-    <script src="./main.js"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <script src="./main.js"></script>
 
 </body>
 

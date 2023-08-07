@@ -66,7 +66,7 @@ main{
             }
         }
     }
-    section {
+    
         .card{
             background-color: #000000;
             img{
@@ -85,12 +85,12 @@ main{
                 font-size: 30px;
             }
         }
-    }}
+    }
 
 
     .btnFinal {
         display: grid;
-        grid-template: auto auto / 100px auto 100px;
+        grid-template: auto auto auto / 100px auto 100px;
         .botonFinalizarCompra {
             display: grid;
             grid-column: 2 / 3;
@@ -104,6 +104,12 @@ main{
             grid-column: 2 / 3;
             grid-row: 2 / 3;
             justify-self: center;
+        }
+        .spinner-border {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+            justify-self: center;
+            margin-top: 10px;
         }
     }
 
@@ -135,7 +141,9 @@ main{
     padding: 0;
 }
 
-
-
+.toastify{
+    background: #FFC600;
+    color: black
+}
 
 

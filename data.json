@@ -1,0 +1,11 @@
+
+[
+    { "img":"./assets/jessie_ware_that_feels_good-portada.jpg", "id": 9, "nombre": "That! Feels Good!", "artista": "Jessie Ware", "precio": 38, "descuento": "NO"},
+    
+    { "img": "./assets/81ov5ONwPeL._UF894,1000_QL80_.jpg", "id": 10, "nombre": "Red Moon in Venus", "artista": "Kali Uchis", "precio": 32, "descuento": "NO"},
+    
+    { "img": "./assets/nathy_peluso_calambre-portada.jpg", "id": 11, "nombre": "Calambre", "artista": "Nathy Peluso", "precio": 40, "descuento": "NO"},
+    
+    { "img": "./assets/MARINA-Ancient-Dreams-in-a-Modern-Land.jpg", "id": 12, "nombre": "Ancient Dreams in a Modern Land", "artista": "Marina", "precio": 35, "descuento": "NO"}
+]
+
